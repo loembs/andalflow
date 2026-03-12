@@ -6,6 +6,9 @@
 .env.local
 .env.*.local
 
+# Migrations SQL Supabase (contiennent des données sensibles)
+supabase/
+
 
 # Logs
 logs

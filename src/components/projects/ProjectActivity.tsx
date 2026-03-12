@@ -12,7 +12,7 @@ import {
   User,
   Calendar
 } from "lucide-react";
-import { ProjectAction } from "@/types/permissions";
+import { ProjectAction } from "@/types";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
@@ -30,15 +30,15 @@ export const ProjectActivity = ({
 }: ProjectActivityProps) => {
   const getActionIcon = (type: ProjectAction['type']) => {
     switch (type) {
-      case 'create':
+      case 'CREATE':
         return Plus;
-      case 'update':
+      case 'UPDATE':
         return Edit;
-      case 'delete':
+      case 'DELETE':
         return Trash2;
-      case 'status_change':
+      case 'STATUS_CHANGE':
         return CheckCircle;
-      case 'assign':
+      case 'ASSIGN':
         return User;
       default:
         return Activity;
@@ -47,15 +47,15 @@ export const ProjectActivity = ({
 
   const getActionColor = (type: ProjectAction['type']) => {
     switch (type) {
-      case 'create':
+      case 'CREATE':
         return 'text-green-600 bg-green-100';
-      case 'update':
+      case 'UPDATE':
         return 'text-blue-600 bg-blue-100';
-      case 'delete':
+      case 'DELETE':
         return 'text-red-600 bg-red-100';
-      case 'status_change':
+      case 'STATUS_CHANGE':
         return 'text-purple-600 bg-purple-100';
-      case 'assign':
+      case 'ASSIGN':
         return 'text-orange-600 bg-orange-100';
       default:
         return 'text-gray-600 bg-gray-100';
@@ -64,15 +64,15 @@ export const ProjectActivity = ({
 
   const getActionLabel = (type: ProjectAction['type']) => {
     switch (type) {
-      case 'create':
+      case 'CREATE':
         return 'Création';
-      case 'update':
+      case 'UPDATE':
         return 'Modification';
-      case 'delete':
+      case 'DELETE':
         return 'Suppression';
-      case 'status_change':
+      case 'STATUS_CHANGE':
         return 'Changement de statut';
-      case 'assign':
+      case 'ASSIGN':
         return 'Assignation';
       default:
         return type;
